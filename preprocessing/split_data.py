@@ -18,6 +18,8 @@ def get_args():
                         help='The path to the saved dataset.')
     parser.add_argument('--label_col', type = str, default="target",
                         help='The column name of the target variable in the dataset,')
+    parser.add_argument('--weight_col', type = str, default="target",
+                        help='The name of the weight trait column in the dataset,')
     parser.add_argument('--shuffle', type = bool, default=True,
                         help='Whether to shuffle the data before splitting.')
     parser.add_argument('--seed', type = int, default=42,
@@ -33,6 +35,7 @@ if __name__ == "__main__":
     df = pd.read_csv(args.path)
     arrays = split_dataframe(df, 
                              label_col = args.label_col, 
+                             weight_col = args.weight_col,
                              shuffle = args.shuffle, 
                              seed = args.seed, 
                              normalize = args.normalize)

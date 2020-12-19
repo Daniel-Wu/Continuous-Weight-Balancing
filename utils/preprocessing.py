@@ -17,7 +17,7 @@ def skdata_to_table(data):
     return df
 
 
-def split_dataframe(df, label_col = "target", weight_col = "target", shuffle = True, seed = 42, normalize = True, ):
+def split_dataframe(df, label_col = "target", weight_col = "target", shuffle = True, seed = 42, normalize = True):
     """
     Function which takes a dataframe and splits the data into 80/10/10 train/val/test splits
     
@@ -35,7 +35,8 @@ def split_dataframe(df, label_col = "target", weight_col = "target", shuffle = T
     np.random.seed(seed)
     n = df.shape[0]
     idxs = np.arange(n)
-    np.random.shuffle(idxs)
+
+    if shuffle: np.random.shuffle(idxs)
     
     train_idxs = idxs[:int(0.8 * n)]
     val_idxs = idxs[int(0.8 * n) : int(0.9 * n)]
