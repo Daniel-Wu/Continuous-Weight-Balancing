@@ -5,21 +5,23 @@
 import sys
 import os
 sys.path.append("../utils")
-
+import gdown
 from preprocessing import skdata_to_table
 from sklearn.datasets import fetch_california_housing
+import time
 
 if __name__ == "__main__":
-    print("Downloading heart disease dataset.")
+    print("Downloading heart disease dataset...")
 
     ## Public GDrive link to Kaggle data
     gdrive_url = 'https://drive.google.com/uc?id=1fF4ZGnGgfKCsuFSnvyuBE_a5oZXPe85B'
- 	local_dir = "../data/hd"
+    local_dir = "../data/hd"
 
     os.makedirs(local_dir, exist_ok = True)
 
     local_path = os.path.join(local_dir, 'data.csv')
 
+    time.sleep(100)
     gdown.download(gdrive_url, local_path, quiet=False)
 
-    print("Dataset saved at", local_path)
+    print("Dataset saved at: ", local_path)

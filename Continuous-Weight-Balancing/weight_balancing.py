@@ -9,18 +9,20 @@ import matplotlib.pyplot as plt
 def continuous_weight(trait, target, addl_trait = None, clipping = None, verbose = True):
     """
     Continuously reweights the trait to approximate the target
-    params:
-    trait: numpy array of the weight trait
-    target: any subclass of scipy.stats.rv_continuous; some target distribution
-    addl_trait: if not None, a list of additional trait arrays. 
-                weights will be calculated on these traits, but the trait data will not be used in determining the transfer function.
-                Useful for val or test sets.
-    clipping: if not None, is a tuple (lower, upper) giving the bounds at which to clip the weights. Individual clipping thresholds may be None.
-    verbose: If true, prints intermediate outputs and graphs.
     
-    Returns
-    weights, if addl_trait is None
-    weights, [addl_weights, ...], if addl_trait is not None
+    Args:
+    
+    trait                         (np array): numpy array of the weight trait
+    target(scipy.stats.rv_continuous object): any subclass of scipy.stats.rv_continuous; some target distribution
+    addl_trait        (list<np arr> or None): if not None, a list of additional trait arrays. 
+                                                   weights will be calculated on these traits, but the trait data will not be used in determining the transfer function. Useful for val or test sets.
+    clipping   (None or tuple<float, float>): if not None, is a tuple (lower, upper) giving the bounds at which to clip the weights. Individual clipping thresholds may be None.
+    verbose                           (bool): If true, prints intermediate outputs and graphs.
+    
+    Returns:
+    
+    weights                       (np array): if addl_trait is None
+    [addl_weights, ...]       (list<np arr>): if addl_trait is not None
     """
     
     #Approximate the trait distribution

@@ -41,7 +41,7 @@ if __name__ == "__main__":
                              normalize = args.normalize)
     
     out_path = os.path.dirname(args.path)
-    for arr, name in zip(arrays, ["X_train", "y_train", "wt_train", "X_val", "y_val", "wt_val", "X_test", "y_test", "wt_test"]):
+    for arr, name in zip(arrays, ["X_train", "y_train", "traits_train", "X_val", "y_val", "traits_val", "X_test", "y_test", "traits_test"]):
         np.save(os.path.join(out_path, name + ".npy"), arr)
-    
+
     print("Arrays saved to", out_path)

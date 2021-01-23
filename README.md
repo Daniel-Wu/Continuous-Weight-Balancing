@@ -1,11 +1,12 @@
 # Continuous-Weight-Balancing
 
 
-## Timeline - 5 weeks
+## Timeline - 15 weeks
 Dec 5th: get numpy and preprocessing
-Dec 12th: prelimiaries (prove limit of discrete is bad continuous, method demo)
-Dec 19th: Core expts done
-Dec 26th: Paper drafted
+Dec 12th: prelimiaries (method demo)
+Dec 25th: do nothing
+Jan 16th: prove limit of discrete is bad continuous, Core expts done
+Jan 30th: Paper drafted
 
 
 
