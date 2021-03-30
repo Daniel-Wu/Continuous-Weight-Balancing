@@ -2,3 +2,7 @@ bokeh
 pandas
 scikit-learn
 matplotlib
+numpy
+scipy
+keras
+seaborn
